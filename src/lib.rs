@@ -283,10 +283,10 @@ pub use crate::{
 pub use proc_macro_error_attr2::proc_macro_error;
 
 use proc_macro2::Span;
-use quote::{quote, ToTokens};
+use quote::{ToTokens, quote};
 
 use std::cell::Cell;
-use std::panic::{catch_unwind, resume_unwind, UnwindSafe};
+use std::panic::{UnwindSafe, catch_unwind, resume_unwind};
 
 pub mod dummy;
 
