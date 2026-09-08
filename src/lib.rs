@@ -274,7 +274,7 @@
 #![cfg_attr(feature = "nightly", feature(proc_macro_diagnostic))]
 #![forbid(unsafe_code)]
 
-extern crate proc_macro;
+pub extern crate proc_macro;
 
 pub use crate::{
     diagnostic::{Diagnostic, DiagnosticExt, Level},
@@ -283,10 +283,10 @@ pub use crate::{
 pub use proc_macro_error_attr2::proc_macro_error;
 
 use proc_macro2::Span;
-use quote::{quote, ToTokens};
+use quote::{ToTokens, quote};
 
 use std::cell::Cell;
-use std::panic::{catch_unwind, resume_unwind, UnwindSafe};
+use std::panic::{UnwindSafe, catch_unwind, resume_unwind};
 
 pub mod dummy;
 
